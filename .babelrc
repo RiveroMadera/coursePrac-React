@@ -4,3 +4,22 @@
     "@babel/preset-react"
   ]
 }
+
+/*
+use Async/Await
+
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": true
+        }
+      } 
+    ],
+    "@babel/preset-react"
+  ]
+}
+
+*/

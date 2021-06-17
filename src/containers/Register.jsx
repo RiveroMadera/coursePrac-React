@@ -1,5 +1,6 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/Register.scss';
 
 const Register = () => (
@@ -12,7 +13,9 @@ const Register = () => (
         <input className='input' type='password' placeholder='Contraseña' />
         <button className='button'>Registrarme</button>
       </form>
-      <a href='/'>Iniciar sesión</a>
+      <Link to='/Login'>
+        Iniciar sesión
+      </Link>
     </section>
   </section>
 );

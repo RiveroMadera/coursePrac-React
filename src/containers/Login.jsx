@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../assets/styles/components/Login.scss';
 import googleIcon from '../assets/static/google-icon.png';
@@ -35,7 +36,9 @@ const Login = () => (
       </section>
       <p className='login__container--register'>
         No tienes ninguna cuenta
-        <a href='/'>Regístrate</a>
+        <Link to='/Register'>
+          Regístrate
+        </Link>
       </p>
     </section>
   </section>

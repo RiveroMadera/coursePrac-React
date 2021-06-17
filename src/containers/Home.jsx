@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
@@ -16,8 +17,7 @@ const API = 'http://localhost:3000/initialState';
 const Home = () => {
   const initialState = useInitialState(API);
   return videos.length === 0 ? <h1>Loading....</h1> : (
-    <div className='App'>
-      <Header />
+    <>
       <Search />
       {initialState.mylist.length > 0 &&
         // eslint-disable-next-line react/jsx-wrap-multilines
@@ -40,9 +40,7 @@ const Home = () => {
           ,
         </Carousel>
       </Categories>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

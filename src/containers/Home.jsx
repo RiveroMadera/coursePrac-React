@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Search from '../components/Search';
@@ -12,7 +13,7 @@ import '../assets/styles/App.scss';
 
 const API = 'http://localhost:3000/initialState';
 
-const App = () => {
+const Home = () => {
   const initialState = useInitialState(API);
   return videos.length === 0 ? <h1>Loading....</h1> : (
     <div className='App'>
@@ -45,4 +46,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;

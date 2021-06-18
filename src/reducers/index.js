@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 /* eslint-disable semi */
 const reducer = (state, action) => {
   switch (action.type) {
@@ -6,7 +7,13 @@ const reducer = (state, action) => {
         ...state,
         myList: [...state.myList, action.payload],
       }
-    default: state;
+    case 'DELETE_FAVORITE':
+      return {
+        ...state,
+        myList: state.myList.filter(items => items.id !== action.payload),
+      }
+    default:
+      return state;
   }
 };
 

@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-indent */
+/* eslint-disable indent */
 /* eslint-disable semi */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-props-no-spreading */
@@ -16,13 +18,19 @@ const Home = ({ myList, trends, originals }) => {
   return (
     <>
       <Search />
-      {myList.length > 0 &&
-        // eslint-disable-next-line react/jsx-wrap-multilines
-        <Categories title='Mi Lista'>
-          <Carousel>
-            <CarouselItem />
-          </Carousel>
-        </Categories> }
+        {myList.length > 0 && (
+          <Categories title='mi list'>
+            <Carousel>
+              {trends.map((item) => (
+                <CarouselItem
+                  key={item.id}
+                  {...item}
+                  isList
+                />
+              ))}
+            </Carousel>
+          </Categories>
+        )}
 
       <Categories title='Tendencias'>
         <Carousel>

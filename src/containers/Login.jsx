@@ -77,9 +77,8 @@ const Login = (props) => {
   );
 };
 
-// eslint-disable-next-line no-unused-vars
 const mapDispatchToProps = {
   loginRequest,
 };
 
-export default connect(null, map.mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Login);

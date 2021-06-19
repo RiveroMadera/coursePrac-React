@@ -56,6 +56,8 @@
 }
 
 .header__menu--profile img {
+  border-radius: 100%;
   margin-right: 8px;
+  object-fit: cover;
   width: 40px;
 }

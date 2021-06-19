@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-// eslint-disable-next-line no-unused-vars
 import { registerRequest } from '../actions';
 import '../assets/styles/components/Register.scss';
 
@@ -63,4 +62,8 @@ const Register = (props) => {
   );
 };
 
-export default connect(null, null)(Register);
+const mapDispatchToProps = {
+  registerRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Register);

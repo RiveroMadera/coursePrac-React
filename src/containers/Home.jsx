@@ -6,6 +6,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import Header from '../components/Header';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
@@ -17,20 +18,21 @@ import '../assets/styles/App.scss';
 const Home = ({ myList, trends, originals }) => {
   return (
     <>
-      <Search />
-        {myList.length > 0 && (
-          <Categories title='mi list'>
-            <Carousel>
-              {trends.map((item) => (
-                <CarouselItem
-                  key={item.id}
-                  {...item}
-                  isList
-                />
-              ))}
-            </Carousel>
-          </Categories>
-        )}
+      <Header />
+        <Search />
+          {myList.length > 0 && (
+            <Categories title='mi list'>
+              <Carousel>
+                {trends.map((item) => (
+                  <CarouselItem
+                    key={item.id}
+                    {...item}
+                    isList
+                  />
+                ))}
+              </Carousel>
+            </Categories>
+          )}
 
       <Categories title='Tendencias'>
         <Carousel>

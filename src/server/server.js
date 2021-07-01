@@ -41,7 +41,7 @@ if (ENV === 'development') {
   app.disable('x-powered-by');
 }
 
-const setResponse = (html) => {
+const setResponse = (html, preloadedState) => {
   return (`
   <!DOCTYPE html>
   <html lang="en">

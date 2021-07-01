@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "start": "webpack serve --config webpack.config.js",
+    "build": "webpack-cli --config webpack.config.js",
     "start:dev": "nodemon src/server/index"
   },
   "keywords": [],
@@ -46,10 +45,9 @@
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
+    "compression-webpack-plugin": "^8.0.1",
     "css-loader": "^5.2.6",
     "file-loader": "^6.2.0",
-    "html-loader": "^2.1.2",
-    "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
     "react-hot-loader": "^4.13.0",
     "sass": "^1.35.1",

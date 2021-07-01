@@ -4,14 +4,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
-import useInitialState from '../Hooks/useInitialState';
 
 import '../assets/styles/App.scss';
 

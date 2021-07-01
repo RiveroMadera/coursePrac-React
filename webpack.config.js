@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -28,9 +29,33 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
+    splitChunks: {
+      chunks: 'async',
+      name: '[name]',
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          chunks: 'all',
+          reuseExistingChunk: true,
+          priority: 1,
+          filename: isDev ? 'assets/vendor.js' : 'assets/vendor-[contenthash].js',
+          enforce: true,
+          test(module, chunks) {
+            const name = module.nameForCondition && module.nameForCondition();
+            return (chunk) => chunk.name !== 'vendors' && /[\\/]__node_modules[\\/]/.test(name);
+          },
+        },
+      },
+    },
   },
   module: {
     rules: [
+      {
+        enforce: 'pre',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'eslint_loader',
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
